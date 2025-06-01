@@ -5,12 +5,13 @@ html {
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
+
 }
 
 .container {
   height: 100vh;
-  width: 100vh;
-  margin: 0 auto;
+  width: 100%;
+  margin: 10 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
@@ -19,7 +20,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+
 }
 .status-text {
   font-size: 28px;
@@ -93,7 +94,7 @@ body {
   margin: 0 auto;
   border: 3px solid #aaa;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   position: relative;
 }
 
@@ -108,12 +109,12 @@ body {
 
 .text-box .fake-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 15px;
+  bottom: 15px;
   color: #fff;
   background-color: rgb(21, 161, 237);
   padding: 5px 8px;
-  border-radius: 3px;
+  border-radius: 30px;
 }
 
 .five p {
@@ -155,10 +156,10 @@ body {
 
 .six .hat {
   position: absolute;
-  width: 80px;
-  top: -35px;
+  width: 85px;
+  top: -5px;
   left: 41.5%;
-  /* transform: scale(0.1); */
+  /* transfor: scale(0.1); */
 }
 
 .baloons img {
@@ -266,7 +267,7 @@ body {
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
-    left: 40%;
+    left: 50%;
   }
 }
 
