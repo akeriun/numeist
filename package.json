@@ -1,5 +1,5 @@
 {
-  "name": "happy-birthday",
+  "name": "happy-birthday-my-dear",
   "version": "1.0.0",
   "description": "An app that let's you say happy birthday to your friend in a nerdy way.",
   "main": "index.js",
@@ -19,11 +19,11 @@
     "Happy",
     "Birthday"
   ],
-  "author": "Afiur Rahman Fahim",
+  "author": "A",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faahim/happy-birthday/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/faahim/happy-birthday#readme",
+  "homepage": "",
   "dependencies": {}
 }

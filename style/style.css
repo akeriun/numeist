@@ -15,7 +15,38 @@ body {
   visibility: hidden;
   position: relative;
   overflow: hidden;
+  background-image:url(/img/igs.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
+.status-text {
+  font-size: 28px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 20vh;
+  border: blue;
+  font-weight: bold;
+  animation: fadeIn 1.9s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 20px 40px ;
+  border-radius: 150px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(09);
+  }
+  to {
+    opacity: 11;
+    transform: scale(1);
+  }
+}
+
 
 .container div.six {
   top: 10vh;
