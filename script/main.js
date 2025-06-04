@@ -233,7 +233,20 @@ const animationTimeline = () => {
   ease: Back.easeOut.config(1.5),
   onComplete: () => {
     const video = document.querySelector(".ele video");
-    if (video) video.play();
+    if (video) {
+      video.play().then(() => {
+        // Try fullscreen (varies by browser)
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      }).catch(err => {
+        console.warn("Video playback failed or fullscreen not allowed:", err);
+      });
+    }
   }
 }, "+=1")
 
