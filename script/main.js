@@ -31,11 +31,11 @@ const animationTimeline = () => {
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -77,7 +77,7 @@ const animationTimeline = () => {
       opacity: 0,
       y: 10
     })
-    .to(".three", 0.7, {
+    .to(".three", 0.9, {
       opacity: 0,
       y: 10
     }, "+=2")
@@ -190,20 +190,57 @@ const animationTimeline = () => {
       repeat: 3,
       repeatDelay: 1.4
     }, 0.3)
-    .to(".six", 0.5, {
-      opacity: 0,
-      y: 30,
-      zIndex: "-1"
-    })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(".last-smile", 0.5, {
-      rotation: 90
-    }, "+=1");
+    .to(".six", 0.9, {
+  opacity: 2,
+  y: 30,
+  zIndex: "-1"
+})
 
-  const replyBtn = document.getElementById("replay");
-  replyBtn.addEventListener("click", () => {
-    tl.restart();
-  });
-};
+.staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+.to(".nine", 0.5, {
+  opacity: 0,
+  y: 50,
+  ease: Power2.easeInOut
+}, "+=6")
+
+.from(".tens", 1, {
+  opacity: 0,
+  y: 100,
+  rotationZ: -45,
+  scale: 0.5,
+  ease: Power4.easeOut
+})
+
+.to(".tens", 1, {
+  opacity: 1,
+  scale: 1,
+  rotationZ: 0,
+  y: 0,
+  ease: Power4.easeInOut
+}, "+=5")
+
+// Animate each chat message inside .tens
+.staggerTo(".tens .chat-message", 0.8, {
+  opacity: 1,
+  y: 0,
+  ease: Power2.easeOut
+}, 1)
+
+// Show .ele block with video
+.to(".ele", 1, {
+  opacity: 1,
+  y: 0,
+  ease: Back.easeOut.config(1.5),
+  onComplete: () => {
+    const video = document.querySelector(".ele video");
+    if (video) video.play();
+  }
+}, "+=1")
+
+// Animate last smile after video reveal
+.to(".last-smile", 0.5, {
+  rotation: 90,
+}, "+=1");
+}
 
 
