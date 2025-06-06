@@ -407,3 +407,22 @@ body {
   border-radius: 15px;
   background-color: #000;
 }
+
+.chat-boxs {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cb{
+  background-color: #2196f3; /* blue background */
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+}
+
