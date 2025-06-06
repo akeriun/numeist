@@ -12,8 +12,11 @@
 </head>
 <body>
   <div id="status-message" class="status-text">
-  <div id="status-message" style="text-align:center; font-size: 20px; margin-top: 20px;">
-    <div class="chat-boxs">
+ <div id="status-message" class="status-text" style="text-align:center; font-size: 20px; margin-top: 20px;">
+  
+  <p id="time-message" class="time-text"></p>
+</div>
+<div class="chat-boxs" style="display: none;">
     <div class="message left">Enna Open aagalayaaaa...</div>
     <div class="message right">aama aama aama</div>
     <div class="message left">Unakaana time epo varumo apo than adhu open aagum</div>
@@ -21,7 +24,6 @@
     <div class="message left">Theriyalayeeeee</div>
     <div class="message right">aaaaaaaaaaaaaaaaaaaaaaaahhhh</div>
   </div>
-  </div> 
   </div>
 
   <div class="container">
@@ -174,10 +176,12 @@
 <script>
 
   const showMessage = (msg) => {
-  const msgBox = document.getElementById("status-message");
-  const chtbox = document.getElementById("chat-boxs");
-  msgBox.innerText = msg;
+  const msgText = document.getElementById("time-message");
+  const chatBox = document.querySelector(".chat-boxs");
+  msgText.innerText = msg;
+  chatBox.style.display = "none";
 };
+
 
 const hideContainer = () => {
   const container = document.querySelector(".container");
@@ -188,9 +192,9 @@ const hideContainer = () => {
 
 const runAtSpecificTime = () => {
   const startHour = 23;
-  const startMinute = 9;
+  const startMinute = 39;
   const endHour = 23;
-  const endMinute = 19;
+  const endMinute = 49;
 
   const now = new Date();
   const nowTime = now.getTime();
@@ -206,7 +210,7 @@ const runAtSpecificTime = () => {
     const hours = Math.floor(diff / 3600);
     const minutes = Math.floor((diff % 3600) / 60);
     const seconds = diff % 60;
-    showMessage(`Please wait. You got your note on-time only so don't exit ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`);
+    showMessage(`Ivlo Seekram vandhu ena pudungura andhan timer paathutea la poietu aprometuka vahh...peaaa ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`);
     hideContainer();
   } else if (nowTime >= startTime.getTime() && nowTime < endTime.getTime()) {
     document.getElementById("status-message").style.display = "none";
@@ -214,16 +218,21 @@ const runAtSpecificTime = () => {
     fetchData(); 
     clearInterval(timer);
   } else {
-    showMessage("Time expired. Please contact admin.");
+    
+    showMessage("Neram mudinjuchu pochu naalaiku vah...pakalam, naalaikaachum correct time kuh vaah");
     hideContainer();
     clearInterval(timer);
   }
 };
 
 const showChatBox = () => {
-  const chatBoxes = document.querySelectorAll(".chat-boxs");
-  chatBoxes.forEach(box => box.style.display = "block");
+  const chatBox = document.querySelector(".chat-boxs");
+  const msgText = document.getElementById("time-message");
+  if (chatBox) chatBox.style.display = "block";
+  if (msgText) msgText.style.display = "none";
 };
+
+
 
 
 const pad = (n) => (n < 10 ? "0" + n : n);
